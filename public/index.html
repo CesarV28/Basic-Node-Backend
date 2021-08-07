@@ -23,11 +23,11 @@
 
     <script>
 
-        console.log( window.location.hostname.includes('localhost') );
+        //console.log( window.location.hostname.includes('localhost') );
 
         var url = ( window.location.hostname.includes('localhost') )
                     ? 'http://localhost:8080/api/auth/google'
-                    : 'https://restserver-node-curso-node.herokuapp.com/'
+                    : 'https://restserver-node-curso-node.herokuapp.com/api/auth/google'
 
         function onSignIn(googleUser) {
 
@@ -52,9 +52,9 @@
         }
 
         function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-            console.log('User signed out.');
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                console.log('User signed out.');
             });
         }
 
